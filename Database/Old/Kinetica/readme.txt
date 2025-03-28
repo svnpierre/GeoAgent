@@ -1,0 +1,1 @@
+Needs a Kinetica databse nd the kinetica-udf-api-python-master API.

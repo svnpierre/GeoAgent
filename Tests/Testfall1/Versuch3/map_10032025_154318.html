@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_534da0228a9f4c565c6e780adda55482 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/digidem/leaflet-side-by-side@2.0.0/leaflet-side-by-side.min.js"></script>
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+    <style>
+    .leaflet-popup-content-wrapper {
+        overflow: auto !important;
+        max-width: 200px !important;
+        max-height: 175px !important;
+    }
+    </style>
+    
+    
+            <div class="folium-map" id="map_534da0228a9f4c565c6e780adda55482" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_534da0228a9f4c565c6e780adda55482 = L.map(
+                "map_534da0228a9f4c565c6e780adda55482",
+                {
+                    center: [51.44, 9.83],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+
+            var geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85 = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_a510efb86ac03d7c25252faacc309a85 = geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85["provider"];
+
+            var customGeocoder_geocoder_a510efb86ac03d7c25252faacc309a85 = L.Control.Geocoder[ geocoderName_geocoder_a510efb86ac03d7c25252faacc309a85 ](
+                geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85['providerOptions']
+            );
+            geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85["geocoder"] = customGeocoder_geocoder_a510efb86ac03d7c25252faacc309a85;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_a510efb86ac03d7c25252faacc309a85['zoom'] || map_534da0228a9f4c565c6e780adda55482.getZoom();
+                map_534da0228a9f4c565c6e780adda55482.setView(e.geocode.center, zoom);
+            }).addTo(map_534da0228a9f4c565c6e780adda55482);
+
+        
+    
+            var feature_group_c99e94038f09fb64e11eaeea0c7b0a1e = L.featureGroup(
+                {}
+            );
+        
+    
+            feature_group_c99e94038f09fb64e11eaeea0c7b0a1e.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+                var drawnItems_draw_control_3f071a49e5cc23430020d6583462cba9 =
+                    feature_group_c99e94038f09fb64e11eaeea0c7b0a1e;
+
+            options.edit.featureGroup = drawnItems_draw_control_3f071a49e5cc23430020d6583462cba9;
+            var draw_control_3f071a49e5cc23430020d6583462cba9 = new L.Control.Draw(
+                options
+            ).addTo( map_534da0228a9f4c565c6e780adda55482 );
+            map_534da0228a9f4c565c6e780adda55482.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;                    
+                layer.id = 'geom_' + new Date().getTime();
+                console.log(layer.id);
+                
+                
+                var coords = layer.toGeoJSON();
+                coords["properties"]["id"] = layer.id;
+                coords = JSON.stringify(coords);
+                layer.on('click', function() {
+                    
+                    console.log(coords);
+                });
+                drawnItems_draw_control_3f071a49e5cc23430020d6583462cba9.addLayer(layer);
+            });
+            map_534da0228a9f4c565c6e780adda55482.on('draw:created', function(e) {
+                drawnItems_draw_control_3f071a49e5cc23430020d6583462cba9.addLayer(e.layer);
+            });
+
+            
+        
+    
+            var mouse_position_a708d94627f09dc6dba9207820c6cf2f = new L.Control.MousePosition(
+                {"emptyString": "Unavailable", "lngFirst": false, "numDigits": 5, "position": "bottomright", "prefix": "", "separator": " : "}
+            );
+            mouse_position_a708d94627f09dc6dba9207820c6cf2f.options["latFormatter"] =
+                undefined;
+            mouse_position_a708d94627f09dc6dba9207820c6cf2f.options["lngFormatter"] =
+                undefined;
+            map_534da0228a9f4c565c6e780adda55482.addControl(mouse_position_a708d94627f09dc6dba9207820c6cf2f);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": true, "position": "topright", "title": "Expand me", "titleCancel": "Exit me"}
+            ).addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var locate_control_c65bf27e2fb42a03f1fce7274fa9e151 = L.control.locate(
+                {}
+            ).addTo(map_534da0228a9f4c565c6e780adda55482);
+            
+        
+    
+            var measure_control_3101078bb8f0f26f0ef2919dd3c12ffa = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_534da0228a9f4c565c6e780adda55482.addControl(measure_control_3101078bb8f0f26f0ef2919dd3c12ffa);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=y\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "Imagery @2024 TerraMetrics, Map data @2024 GeoBasis-DE/BKG (@2009), Google", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var tile_layer_231f8557dfdc0c800f247e2b39450056 = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {"attribution": "Map data: \u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors, \u003ca href=\"http://viewfinderpanoramas.org\"\u003eSRTM\u003c/a\u003e | Map style: \u0026copy; \u003ca href=\"https://opentopomap.org\"\u003eOpenTopoMap\u003c/a\u003e (\u003ca href=\"https://creativecommons.org/licenses/by-sa/3.0/\"\u003eCC-BY-SA\u003c/a\u003e)", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_231f8557dfdc0c800f247e2b39450056.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var side_by_side_layers_4a112cf5a09e20751640d311e9527562 = L.control.sideBySide(
+                tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b, tile_layer_231f8557dfdc0c800f247e2b39450056
+            ).addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var layer_control_37b9ab5a27b183c0646b198b80ebdd4e_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "Geometries" : feature_group_c99e94038f09fb64e11eaeea0c7b0a1e,
+                },
+            };
+            
+
+        
+    
+            feature_group_c99e94038f09fb64e11eaeea0c7b0a1e.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_231f8557dfdc0c800f247e2b39450056.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+        function geo_json_7a4d6aa886ce5421d30ae131819f32a7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": "0.85", "weight": "1.5"};
+            }
+        }
+        function geo_json_7a4d6aa886ce5421d30ae131819f32a7_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_7a4d6aa886ce5421d30ae131819f32a7_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_7a4d6aa886ce5421d30ae131819f32a7_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_7a4d6aa886ce5421d30ae131819f32a7_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_7a4d6aa886ce5421d30ae131819f32a7.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_7a4d6aa886ce5421d30ae131819f32a7_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_7a4d6aa886ce5421d30ae131819f32a7 = L.geoJson(null, {
+                onEachFeature: geo_json_7a4d6aa886ce5421d30ae131819f32a7_onEachFeature,
+            
+                style: geo_json_7a4d6aa886ce5421d30ae131819f32a7_styler,
+                pointToLayer: geo_json_7a4d6aa886ce5421d30ae131819f32a7_pointToLayer,
+        });
+
+        function geo_json_7a4d6aa886ce5421d30ae131819f32a7_add (data) {
+            geo_json_7a4d6aa886ce5421d30ae131819f32a7
+                .addData(data);
+        }
+            geo_json_7a4d6aa886ce5421d30ae131819f32a7_add({"bbox": [8.3577817, 48.99167299999999, 8.4164941, 49.0288468], "features": [{"bbox": [8.3889496, 48.99167299999999, 8.3889496, 48.99167299999999], "geometry": {"coordinates": [8.3889496, 48.99167299999999], "type": "Point"}, "id": "0", "properties": {"name": "Caf\u00e9 B\u00e4ndel", "osm_id": 1714268110}, "type": "Feature"}, {"bbox": [8.3909167, 48.9946445, 8.3909167, 48.9946445], "geometry": {"coordinates": [8.3909167, 48.9946445], "type": "Point"}, "id": "1", "properties": {"name": "Neff", "osm_id": 1725511439}, "type": "Feature"}, {"bbox": [8.4011224, 48.9943406, 8.4011224, 48.9943406], "geometry": {"coordinates": [8.4011224, 48.9943406], "type": "Point"}, "id": "2", "properties": {"name": "Costa", "osm_id": 4573701922}, "type": "Feature"}, {"bbox": [8.4034669, 48.996249799999994, 8.4034669, 48.996249799999994], "geometry": {"coordinates": [8.4034669, 48.996249799999994], "type": "Point"}, "id": "3", "properties": {"name": "la baguette", "osm_id": 10900386637}, "type": "Feature"}, {"bbox": [8.3929385, 48.9972943, 8.3929385, 48.9972943], "geometry": {"coordinates": [8.3929385, 48.9972943], "type": "Point"}, "id": "4", "properties": {"name": "Frieda", "osm_id": 311191490}, "type": "Feature"}, {"bbox": [8.389806, 48.99878459999999, 8.389806, 48.99878459999999], "geometry": {"coordinates": [8.389806, 48.99878459999999], "type": "Point"}, "id": "5", "properties": {"name": "Caf\u00e9 Vincentius", "osm_id": 3966213071}, "type": "Feature"}, {"bbox": [8.3696004, 49.0288468, 8.3696004, 49.0288468], "geometry": {"coordinates": [8.3696004, 49.0288468], "type": "Point"}, "id": "6", "properties": {"name": "vis-\u00e0-vis", "osm_id": 5847349038}, "type": "Feature"}, {"bbox": [8.3728676, 49.01776219999999, 8.3728676, 49.01776219999999], "geometry": {"coordinates": [8.3728676, 49.01776219999999], "type": "Point"}, "id": "7", "properties": {"name": "Kanne Caf\u00e9", "osm_id": 12292058708}, "type": "Feature"}, {"bbox": [8.3743781, 49.00856730000001, 8.3743781, 49.00856730000001], "geometry": {"coordinates": [8.3743781, 49.00856730000001], "type": "Point"}, "id": "8", "properties": {"name": "KAFFEE-OK", "osm_id": 3775227474}, "type": "Feature"}, {"bbox": [8.3605473, 49.0114339, 8.3605473, 49.0114339], "geometry": {"coordinates": [8.3605473, 49.0114339], "type": "Point"}, "id": "9", "properties": {"name": "Tchibo", "osm_id": 1531454786}, "type": "Feature"}, {"bbox": [8.3654186, 49.0128099, 8.3654186, 49.0128099], "geometry": {"coordinates": [8.3654186, 49.0128099], "type": "Point"}, "id": "10", "properties": {"name": "Caf\u00e9 Brahms", "osm_id": 665363306}, "type": "Feature"}, {"bbox": [8.3601451, 49.01427230000001, 8.3601451, 49.01427230000001], "geometry": {"coordinates": [8.3601451, 49.01427230000001], "type": "Point"}, "id": "11", "properties": {"name": "Iss Gut Jetzt", "osm_id": 5046880009}, "type": "Feature"}, {"bbox": [8.3577817, 49.0138934, 8.3577817, 49.0138934], "geometry": {"coordinates": [8.3577817, 49.0138934], "type": "Point"}, "id": "12", "properties": {"name": "Vanguarde", "osm_id": 7769164733}, "type": "Feature"}, {"bbox": [8.3591255, 49.011481399999994, 8.3591255, 49.011481399999994], "geometry": {"coordinates": [8.3591255, 49.011481399999994], "type": "Point"}, "id": "13", "properties": {"name": "El Tesoro", "osm_id": 1145500850}, "type": "Feature"}, {"bbox": [8.3687778, 49.005748100000005, 8.3687778, 49.005748100000005], "geometry": {"coordinates": [8.3687778, 49.005748100000005], "type": "Point"}, "id": "14", "properties": {"name": "Neff", "osm_id": 430912596}, "type": "Feature"}, {"bbox": [8.3829299, 49.0017866, 8.3829299, 49.0017866], "geometry": {"coordinates": [8.3829299, 49.0017866], "type": "Point"}, "id": "15", "properties": {"name": "Eukalyptus Cafe", "osm_id": 3717395092}, "type": "Feature"}, {"bbox": [8.3751221, 49.00860699999999, 8.3751221, 49.00860699999999], "geometry": {"coordinates": [8.3751221, 49.00860699999999], "type": "Point"}, "id": "16", "properties": {"name": "THE CORNER BY MAMA\u0027S", "osm_id": 4005933396}, "type": "Feature"}, {"bbox": [8.376416, 49.009148200000006, 8.376416, 49.009148200000006], "geometry": {"coordinates": [8.376416, 49.009148200000006], "type": "Point"}, "id": "17", "properties": {"name": "Caf\u00e9 Carr\u00e9", "osm_id": 2407380664}, "type": "Feature"}, {"bbox": [8.3763775, 49.0090672, 8.3763775, 49.0090672], "geometry": {"coordinates": [8.3763775, 49.0090672], "type": "Point"}, "id": "18", "properties": {"name": "Cafe Juli", "osm_id": 2710942096}, "type": "Feature"}, {"bbox": [8.3793333, 49.0082958, 8.3793333, 49.0082958], "geometry": {"coordinates": [8.3793333, 49.0082958], "type": "Point"}, "id": "19", "properties": {"name": "Nuovo Gusto", "osm_id": 3337019509}, "type": "Feature"}, {"bbox": [8.3810855, 49.0080477, 8.3810855, 49.0080477], "geometry": {"coordinates": [8.3810855, 49.0080477], "type": "Point"}, "id": "20", "properties": {"name": "LUUC Caf\u00e9 Deli Wein", "osm_id": 2528952753}, "type": "Feature"}, {"bbox": [8.3820879, 49.00802319999999, 8.3820879, 49.00802319999999], "geometry": {"coordinates": [8.3820879, 49.00802319999999], "type": "Point"}, "id": "21", "properties": {"name": "iaro", "osm_id": 8478305227}, "type": "Feature"}, {"bbox": [8.3790892, 49.0099961, 8.3790892, 49.0099961], "geometry": {"coordinates": [8.3790892, 49.0099961], "type": "Point"}, "id": "22", "properties": {"name": "CAPpuccino", "osm_id": 3394211232}, "type": "Feature"}, {"bbox": [8.377409, 49.010597, 8.377409, 49.010597], "geometry": {"coordinates": [8.377409, 49.010597], "type": "Point"}, "id": "23", "properties": {"name": "Mary Poppins", "osm_id": 473896922}, "type": "Feature"}, {"bbox": [8.384248, 49.01494660000001, 8.384248, 49.01494660000001], "geometry": {"coordinates": [8.384248, 49.01494660000001], "type": "Point"}, "id": "24", "properties": {"name": "Coffee Boxx", "osm_id": 1193906016}, "type": "Feature"}, {"bbox": [8.3886276, 49.0098589, 8.3886276, 49.0098589], "geometry": {"coordinates": [8.3886276, 49.0098589], "type": "Point"}, "id": "25", "properties": {"name": "La Dolce Vita", "osm_id": 2920177412}, "type": "Feature"}, {"bbox": [8.387942, 49.0100123, 8.387942, 49.0100123], "geometry": {"coordinates": [8.387942, 49.0100123], "type": "Point"}, "id": "26", "properties": {"name": "Ege Backerei", "osm_id": 3345677217}, "type": "Feature"}, {"bbox": [8.3836326, 49.010326899999995, 8.3836326, 49.010326899999995], "geometry": {"coordinates": [8.3836326, 49.010326899999995], "type": "Point"}, "id": "27", "properties": {"name": "Reiter\u0027s", "osm_id": 2541436176}, "type": "Feature"}, {"bbox": [8.3854514, 49.00995279999999, 8.3854514, 49.00995279999999], "geometry": {"coordinates": [8.3854514, 49.00995279999999], "type": "Point"}, "id": "28", "properties": {"name": "Mert", "osm_id": 3484748199}, "type": "Feature"}, {"bbox": [8.3831013, 49.0079594, 8.3831013, 49.0079594], "geometry": {"coordinates": [8.3831013, 49.0079594], "type": "Point"}, "id": "29", "properties": {"name": "Eiscafe am Sophienpark", "osm_id": 990930839}, "type": "Feature"}, {"bbox": [8.3828925, 49.007988899999994, 8.3828925, 49.007988899999994], "geometry": {"coordinates": [8.3828925, 49.007988899999994], "type": "Point"}, "id": "30", "properties": {"name": "April Tea", "osm_id": 8795682490}, "type": "Feature"}, {"bbox": [8.3849492, 49.00784489999999, 8.3849492, 49.00784489999999], "geometry": {"coordinates": [8.3849492, 49.00784489999999], "type": "Point"}, "id": "31", "properties": {"name": "Zum guten Eck Bar", "osm_id": 3339720361}, "type": "Feature"}, {"bbox": [8.3897805, 49.0087662, 8.3897805, 49.0087662], "geometry": {"coordinates": [8.3897805, 49.0087662], "type": "Point"}, "id": "32", "properties": {"name": "mats", "osm_id": 4891909540}, "type": "Feature"}, {"bbox": [8.3907504, 49.00914029999999, 8.3907504, 49.00914029999999], "geometry": {"coordinates": [8.3907504, 49.00914029999999], "type": "Point"}, "id": "33", "properties": {"name": "Sabi", "osm_id": 1007094832}, "type": "Feature"}, {"bbox": [8.3934793, 49.0088115, 8.3934793, 49.0088115], "geometry": {"coordinates": [8.3934793, 49.0088115], "type": "Point"}, "id": "34", "properties": {"name": "Stephans Cafe", "osm_id": 11155775089}, "type": "Feature"}, {"bbox": [8.3944934, 49.00973609999999, 8.3944934, 49.00973609999999], "geometry": {"coordinates": [8.3944934, 49.00973609999999], "type": "Point"}, "id": "35", "properties": {"name": "Grimminger", "osm_id": 2921305982}, "type": "Feature"}, {"bbox": [8.3950796, 49.007920799999994, 8.3950796, 49.007920799999994], "geometry": {"coordinates": [8.3950796, 49.007920799999994], "type": "Point"}, "id": "36", "properties": {"name": "Badische Backstub\u0027", "osm_id": 256026567}, "type": "Feature"}, {"bbox": [8.3959907, 49.00801189999999, 8.3959907, 49.00801189999999], "geometry": {"coordinates": [8.3959907, 49.00801189999999], "type": "Point"}, "id": "37", "properties": {"name": "Waffelwerk", "osm_id": 6138889748}, "type": "Feature"}, {"bbox": [8.3964872, 49.00827859999999, 8.3964872, 49.00827859999999], "geometry": {"coordinates": [8.3964872, 49.00827859999999], "type": "Point"}, "id": "38", "properties": {"name": "drei\u0026zwanzig", "osm_id": 4024267882}, "type": "Feature"}, {"bbox": [8.3972231, 49.0081005, 8.3972231, 49.0081005], "geometry": {"coordinates": [8.3972231, 49.0081005], "type": "Point"}, "id": "39", "properties": {"name": "GuMo", "osm_id": 746786742}, "type": "Feature"}, {"bbox": [8.3970467, 49.009037299999996, 8.3970467, 49.009037299999996], "geometry": {"coordinates": [8.3970467, 49.009037299999996], "type": "Point"}, "id": "40", "properties": {"name": "Ettli", "osm_id": 3174628061}, "type": "Feature"}, {"bbox": [8.396097900000001, 49.008826200000016, 8.396097900000001, 49.008826200000016], "geometry": {"coordinates": [8.396097900000001, 49.008826200000016], "type": "Point"}, "id": "41", "properties": {"name": "Ludwig\u0027s", "osm_id": 96039177}, "type": "Feature"}, {"bbox": [8.3957767, 49.008779899999986, 8.3957767, 49.008779899999986], "geometry": {"coordinates": [8.3957767, 49.008779899999986], "type": "Point"}, "id": "42", "properties": {"name": "Artino", "osm_id": 3412208320}, "type": "Feature"}, {"bbox": [8.3946544, 49.00962599999999, 8.3946544, 49.00962599999999], "geometry": {"coordinates": [8.3946544, 49.00962599999999], "type": "Point"}, "id": "43", "properties": {"name": "Macchia Tea", "osm_id": 11758673020}, "type": "Feature"}, {"bbox": [8.3972193, 49.01003769999999, 8.3972193, 49.01003769999999], "geometry": {"coordinates": [8.3972193, 49.01003769999999], "type": "Point"}, "id": "44", "properties": {"name": "Berry Su", "osm_id": 4825738782}, "type": "Feature"}, {"bbox": [8.4150581, 49.0111025, 8.4150581, 49.0111025], "geometry": {"coordinates": [8.4150581, 49.0111025], "type": "Point"}, "id": "45", "properties": {"name": "AKK", "osm_id": 427730736}, "type": "Feature"}, {"bbox": [8.4090239, 49.0092279, 8.4090239, 49.0092279], "geometry": {"coordinates": [8.4090239, 49.0092279], "type": "Point"}, "id": "46", "properties": {"name": "intro Caf\u00e9", "osm_id": 8688553072}, "type": "Feature"}, {"bbox": [8.4087118, 49.00879479999999, 8.4087118, 49.00879479999999], "geometry": {"coordinates": [8.4087118, 49.00879479999999], "type": "Point"}, "id": "47", "properties": {"name": "Wohnzimmer", "osm_id": 10554832104}, "type": "Feature"}, {"bbox": [8.4096509, 49.0086022, 8.4096509, 49.0086022], "geometry": {"coordinates": [8.4096509, 49.0086022], "type": "Point"}, "id": "48", "properties": {"name": "jubez Caf\u00e9", "osm_id": 524509698}, "type": "Feature"}, {"bbox": [8.4090127, 49.0083181, 8.4090127, 49.0083181], "geometry": {"coordinates": [8.4090127, 49.0083181], "type": "Point"}, "id": "49", "properties": {"name": "Kaffeebar Schiller", "osm_id": 2305029460}, "type": "Feature"}, {"bbox": [8.4066285, 49.009892, 8.4066285, 49.009892], "geometry": {"coordinates": [8.4066285, 49.009892], "type": "Point"}, "id": "50", "properties": {"name": "Riot", "osm_id": 11148995935}, "type": "Feature"}, {"bbox": [8.406984, 49.0098639, 8.406984, 49.0098639], "geometry": {"coordinates": [8.406984, 49.0098639], "type": "Point"}, "id": "51", "properties": {"name": "Caf\u00e9 Pan", "osm_id": 1249739803}, "type": "Feature"}, {"bbox": [8.4090595, 49.01090620000001, 8.4090595, 49.01090620000001], "geometry": {"coordinates": [8.4090595, 49.01090620000001], "type": "Point"}, "id": "52", "properties": {"name": "Caf\u00e9bar Am Zirkel", "osm_id": 3796835657}, "type": "Feature"}, {"bbox": [8.3868529, 49.020641399999995, 8.3868529, 49.020641399999995], "geometry": {"coordinates": [8.3868529, 49.020641399999995], "type": "Point"}, "id": "53", "properties": {"name": "F\u00e4cherCaf\u00e9", "osm_id": 3838616644}, "type": "Feature"}, {"bbox": [8.4065819, 48.9990833, 8.4065819, 48.9990833], "geometry": {"coordinates": [8.4065819, 48.9990833], "type": "Point"}, "id": "54", "properties": {"name": "Fincaroasters", "osm_id": 10255134515}, "type": "Feature"}, {"bbox": [8.3983636, 49.0100023, 8.3983636, 49.0100023], "geometry": {"coordinates": [8.3983636, 49.0100023], "type": "Point"}, "id": "55", "properties": {"name": "Backwerk", "osm_id": 1305922995}, "type": "Feature"}, {"bbox": [8.3977047, 49.0102011, 8.3977047, 49.0102011], "geometry": {"coordinates": [8.3977047, 49.0102011], "type": "Point"}, "id": "56", "properties": {"name": "Cafe Extrablatt", "osm_id": 412731682}, "type": "Feature"}, {"bbox": [8.3965456, 49.010827799999994, 8.3965456, 49.010827799999994], "geometry": {"coordinates": [8.3965456, 49.010827799999994], "type": "Point"}, "id": "57", "properties": {"name": "Fruiture", "osm_id": 6699067886}, "type": "Feature"}, {"bbox": [8.3964627, 49.011143, 8.3964627, 49.011143], "geometry": {"coordinates": [8.3964627, 49.011143], "type": "Point"}, "id": "58", "properties": {"name": null, "osm_id": 5207165423}, "type": "Feature"}, {"bbox": [8.3953969, 49.0114927, 8.3953969, 49.0114927], "geometry": {"coordinates": [8.3953969, 49.0114927], "type": "Point"}, "id": "59", "properties": {"name": "One Bowl", "osm_id": 6973977392}, "type": "Feature"}, {"bbox": [8.3928496, 49.010966, 8.3928496, 49.010966], "geometry": {"coordinates": [8.3928496, 49.010966], "type": "Point"}, "id": "60", "properties": {"name": "Ateliercafe Ana \u0026 Anda", "osm_id": 6913996801}, "type": "Feature"}, {"bbox": [8.3943744, 49.01296159999999, 8.3943744, 49.01296159999999], "geometry": {"coordinates": [8.3943744, 49.01296159999999], "type": "Point"}, "id": "61", "properties": {"name": "Persepolis", "osm_id": 4810846821}, "type": "Feature"}, {"bbox": [8.3929234, 49.0136047, 8.3929234, 49.0136047], "geometry": {"coordinates": [8.3929234, 49.0136047], "type": "Point"}, "id": "62", "properties": {"name": "Cafeteria", "osm_id": 1122630296}, "type": "Feature"}, {"bbox": [8.3975457, 49.0155358, 8.3975457, 49.0155358], "geometry": {"coordinates": [8.3975457, 49.0155358], "type": "Point"}, "id": "63", "properties": {"name": "Hatz", "osm_id": 29991932}, "type": "Feature"}, {"bbox": [8.4049791, 49.0136284, 8.4049791, 49.0136284], "geometry": {"coordinates": [8.4049791, 49.0136284], "type": "Point"}, "id": "64", "properties": {"name": "Schlosscaf\u00e9", "osm_id": 31262234}, "type": "Feature"}, {"bbox": [8.3992311, 49.0116929, 8.3992311, 49.0116929], "geometry": {"coordinates": [8.3992311, 49.0116929], "type": "Point"}, "id": "65", "properties": {"name": "Mama\u0027s Caf\u00e9", "osm_id": 60019472}, "type": "Feature"}, {"bbox": [8.3989541, 49.0109379, 8.3989541, 49.0109379], "geometry": {"coordinates": [8.3989541, 49.0109379], "type": "Point"}, "id": "66", "properties": {"name": "Espressione", "osm_id": 2151458226}, "type": "Feature"}, {"bbox": [8.3997308, 49.01113380000001, 8.3997308, 49.01113380000001], "geometry": {"coordinates": [8.3997308, 49.01113380000001], "type": "Point"}, "id": "67", "properties": {"name": "Cafe Rih", "osm_id": 1558650894}, "type": "Feature"}, {"bbox": [8.3986751, 49.00998529999999, 8.3986751, 49.00998529999999], "geometry": {"coordinates": [8.3986751, 49.00998529999999], "type": "Point"}, "id": "68", "properties": {"name": "Tee Ninja", "osm_id": 3605775456}, "type": "Feature"}, {"bbox": [8.4015973, 49.010356599999994, 8.4015973, 49.010356599999994], "geometry": {"coordinates": [8.4015973, 49.010356599999994], "type": "Point"}, "id": "69", "properties": {"name": "MoccaSin Coffee", "osm_id": 2305037118}, "type": "Feature"}, {"bbox": [8.4005009, 49.00962830000001, 8.4005009, 49.00962830000001], "geometry": {"coordinates": [8.4005009, 49.00962830000001], "type": "Point"}, "id": "70", "properties": {"name": "Kaffee Fleck", "osm_id": 4642379848}, "type": "Feature"}, {"bbox": [8.4050439, 49.00940589999998, 8.4050439, 49.00940589999998], "geometry": {"coordinates": [8.4050439, 49.00940589999998], "type": "Point"}, "id": "71", "properties": {"name": "Eiscaf\u00e9 Europa", "osm_id": 3506002970}, "type": "Feature"}, {"bbox": [8.4059082, 49.0070285, 8.4059082, 49.0070285], "geometry": {"coordinates": [8.4059082, 49.0070285], "type": "Point"}, "id": "72", "properties": {"name": "espresso stazione", "osm_id": 1922562097}, "type": "Feature"}, {"bbox": [8.4034823, 49.0072742, 8.4034823, 49.0072742], "geometry": {"coordinates": [8.4034823, 49.0072742], "type": "Point"}, "id": "73", "properties": {"name": "Badische Backstub", "osm_id": 524516981}, "type": "Feature"}, {"bbox": [8.3999236, 49.004140799999995, 8.3999236, 49.004140799999995], "geometry": {"coordinates": [8.3999236, 49.004140799999995], "type": "Point"}, "id": "74", "properties": {"name": "The Bee\u2019s Knees", "osm_id": 30030262}, "type": "Feature"}, {"bbox": [8.4019991, 49.0075392, 8.4019991, 49.0075392], "geometry": {"coordinates": [8.4019991, 49.0075392], "type": "Point"}, "id": "75", "properties": {"name": "KaffeeBasis", "osm_id": 524516979}, "type": "Feature"}, {"bbox": [8.392877, 49.0072327, 8.392877, 49.0072327], "geometry": {"coordinates": [8.392877, 49.0072327], "type": "Point"}, "id": "76", "properties": {"name": "Yollie", "osm_id": 9604309217}, "type": "Feature"}, {"bbox": [8.3925611, 49.007231100000006, 8.3925611, 49.007231100000006], "geometry": {"coordinates": [8.3925611, 49.007231100000006], "type": "Point"}, "id": "77", "properties": {"name": "Der Saftladen", "osm_id": 6257701444}, "type": "Feature"}, {"bbox": [8.391608, 49.0074559, 8.391608, 49.0074559], "geometry": {"coordinates": [8.391608, 49.0074559], "type": "Point"}, "id": "78", "properties": {"name": "Moser", "osm_id": 4916468232}, "type": "Feature"}, {"bbox": [8.3919797, 49.006927399999995, 8.3919797, 49.006927399999995], "geometry": {"coordinates": [8.3919797, 49.006927399999995], "type": "Point"}, "id": "79", "properties": {"name": "Le Renard Bistro", "osm_id": 11043963506}, "type": "Feature"}, {"bbox": [8.3943905, 49.004952, 8.3943905, 49.004952], "geometry": {"coordinates": [8.3943905, 49.004952], "type": "Point"}, "id": "80", "properties": {"name": "Le Journal", "osm_id": 96039209}, "type": "Feature"}, {"bbox": [8.3947147, 49.002660500000005, 8.3947147, 49.002660500000005], "geometry": {"coordinates": [8.3947147, 49.002660500000005], "type": "Point"}, "id": "81", "properties": {"name": "Ringcaf\u00e9 B\u00f6ckeler", "osm_id": 9954259513}, "type": "Feature"}, {"bbox": [8.3925614, 49.0007347, 8.3925614, 49.0007347], "geometry": {"coordinates": [8.3925614, 49.0007347], "type": "Point"}, "id": "82", "properties": {"name": "Caf\u00e9 Konditorei B\u00e4ckerei Lasch", "osm_id": 3634042233}, "type": "Feature"}, {"bbox": [8.3954849, 49.0004234, 8.3954849, 49.0004234], "geometry": {"coordinates": [8.3954849, 49.0004234], "type": "Point"}, "id": "83", "properties": {"name": "Sukie\u0027s Cake Shop", "osm_id": 3286713809}, "type": "Feature"}, {"bbox": [8.3947107, 49.00171949999999, 8.3947107, 49.00171949999999], "geometry": {"coordinates": [8.3947107, 49.00171949999999], "type": "Point"}, "id": "84", "properties": {"name": "Wegahta", "osm_id": 311372769}, "type": "Feature"}, {"bbox": [8.3945077, 49.001861299999995, 8.3945077, 49.001861299999995], "geometry": {"coordinates": [8.3945077, 49.001861299999995], "type": "Point"}, "id": "85", "properties": {"name": "Tea House", "osm_id": 10163881132}, "type": "Feature"}, {"bbox": [8.4007317, 49.0008274, 8.4007317, 49.0008274], "geometry": {"coordinates": [8.4007317, 49.0008274], "type": "Point"}, "id": "86", "properties": {"name": "La Creperia", "osm_id": 6853617143}, "type": "Feature"}, {"bbox": [8.4034091, 49.00213850000001, 8.4034091, 49.00213850000001], "geometry": {"coordinates": [8.4034091, 49.00213850000001], "type": "Point"}, "id": "87", "properties": {"name": "Lina\u0027s Gelateria Karlsruhe", "osm_id": 10873189330}, "type": "Feature"}, {"bbox": [8.4033904, 49.0017606, 8.4033904, 49.0017606], "geometry": {"coordinates": [8.4033904, 49.0017606], "type": "Point"}, "id": "88", "properties": {"name": "Caf\u00e9 Kongress", "osm_id": 296294952}, "type": "Feature"}, {"bbox": [8.4034069, 49.0018749, 8.4034069, 49.0018749], "geometry": {"coordinates": [8.4034069, 49.0018749], "type": "Point"}, "id": "89", "properties": {"name": "Kongress P\u00e4usle", "osm_id": 10102844779}, "type": "Feature"}, {"bbox": [8.4058375, 49.0008535, 8.4058375, 49.0008535], "geometry": {"coordinates": [8.4058375, 49.0008535], "type": "Point"}, "id": "90", "properties": {"name": "Cafe Easy", "osm_id": 8712852962}, "type": "Feature"}, {"bbox": [8.406866, 49.0016385, 8.406866, 49.0016385], "geometry": {"coordinates": [8.406866, 49.0016385], "type": "Point"}, "id": "91", "properties": {"name": "Rosa", "osm_id": 895291337}, "type": "Feature"}, {"bbox": [8.4067267, 49.0016342, 8.4067267, 49.0016342], "geometry": {"coordinates": [8.4067267, 49.0016342], "type": "Point"}, "id": "92", "properties": {"name": "ELECTRIC EEL", "osm_id": 454965929}, "type": "Feature"}, {"bbox": [8.4065643, 49.00388569999999, 8.4065643, 49.00388569999999], "geometry": {"coordinates": [8.4065643, 49.00388569999999], "type": "Point"}, "id": "93", "properties": {"name": "Confiserie Gordani Lasch", "osm_id": 985521943}, "type": "Feature"}, {"bbox": [8.4076558, 49.00401449999999, 8.4076558, 49.00401449999999], "geometry": {"coordinates": [8.4076558, 49.00401449999999], "type": "Point"}, "id": "94", "properties": {"name": "K\u00e4ffli Haus", "osm_id": 296294951}, "type": "Feature"}, {"bbox": [8.4091522, 49.00559069999999, 8.4091522, 49.00559069999999], "geometry": {"coordinates": [8.4091522, 49.00559069999999], "type": "Point"}, "id": "95", "properties": {"name": "Caf\u00e9 paZZo", "osm_id": 866778710}, "type": "Feature"}, {"bbox": [8.4072216, 49.00753879999999, 8.4072216, 49.00753879999999], "geometry": {"coordinates": [8.4072216, 49.00753879999999], "type": "Point"}, "id": "96", "properties": {"name": "Cafe-bohne", "osm_id": 1743158334}, "type": "Feature"}, {"bbox": [8.4074354, 49.007760299999994, 8.4074354, 49.007760299999994], "geometry": {"coordinates": [8.4074354, 49.007760299999994], "type": "Point"}, "id": "97", "properties": {"name": "Winter caf\u00e9", "osm_id": 11765673269}, "type": "Feature"}, {"bbox": [8.4164941, 49.004679900000006, 8.4164941, 49.004679900000006], "geometry": {"coordinates": [8.4164941, 49.004679900000006], "type": "Point"}, "id": "98", "properties": {"name": "Tiramis\u00f9", "osm_id": 3506705164}, "type": "Feature"}, {"bbox": [8.3704217, 49.00256600000001, 8.3704217, 49.00256600000001], "geometry": {"coordinates": [8.3704217, 49.00256600000001], "type": "Point"}, "id": "99", "properties": {"name": "Caf\u00e9 am Park", "osm_id": 5954744650}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_7a4d6aa886ce5421d30ae131819f32a7.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["osm_id", "name"];
+    let aliases = ["osm_id", "name"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumpopup"});
+                     
+    
+            geo_json_7a4d6aa886ce5421d30ae131819f32a7.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            map_534da0228a9f4c565c6e780adda55482.fitBounds(
+                [[48.99150531789718, 8.358069518232984], [49.02909200599551, 8.41620867796248]],
+                {}
+            );
+        
+    
+            var feature_group_475d492b27c4dea91235603e30309d27 = L.featureGroup(
+                {}
+            );
+        
+    
+            var heat_map_9a8ec3210892263fab94071f0353eb8e = L.heatLayer(
+                [[48.99167299999999, 8.3889496], [48.9946445, 8.3909167], [48.9943406, 8.4011224], [48.996249799999994, 8.4034669], [48.9972943, 8.3929385], [48.99878459999999, 8.389806], [49.0288468, 8.3696004], [49.01776219999999, 8.3728676], [49.00856730000001, 8.3743781], [49.0114339, 8.3605473], [49.0128099, 8.3654186], [49.01427230000001, 8.3601451], [49.0138934, 8.3577817], [49.011481399999994, 8.3591255], [49.005748100000005, 8.3687778], [49.0017866, 8.3829299], [49.00860699999999, 8.3751221], [49.009148200000006, 8.376416], [49.0090672, 8.3763775], [49.0082958, 8.3793333], [49.0080477, 8.3810855], [49.00802319999999, 8.3820879], [49.0099961, 8.3790892], [49.010597, 8.377409], [49.01494660000001, 8.384248], [49.0098589, 8.3886276], [49.0100123, 8.387942], [49.010326899999995, 8.3836326], [49.00995279999999, 8.3854514], [49.0079594, 8.3831013], [49.007988899999994, 8.3828925], [49.00784489999999, 8.3849492], [49.0087662, 8.3897805], [49.00914029999999, 8.3907504], [49.0088115, 8.3934793], [49.00973609999999, 8.3944934], [49.007920799999994, 8.3950796], [49.00801189999999, 8.3959907], [49.00827859999999, 8.3964872], [49.0081005, 8.3972231], [49.009037299999996, 8.3970467], [49.008826200000016, 8.396097900000001], [49.008779899999986, 8.3957767], [49.00962599999999, 8.3946544], [49.01003769999999, 8.3972193], [49.0111025, 8.4150581], [49.0092279, 8.4090239], [49.00879479999999, 8.4087118], [49.0086022, 8.4096509], [49.0083181, 8.4090127], [49.009892, 8.4066285], [49.0098639, 8.406984], [49.01090620000001, 8.4090595], [49.020641399999995, 8.3868529], [48.9990833, 8.4065819], [49.0100023, 8.3983636], [49.0102011, 8.3977047], [49.010827799999994, 8.3965456], [49.011143, 8.3964627], [49.0114927, 8.3953969], [49.010966, 8.3928496], [49.01296159999999, 8.3943744], [49.0136047, 8.3929234], [49.0155358, 8.3975457], [49.0136284, 8.4049791], [49.0116929, 8.3992311], [49.0109379, 8.3989541], [49.01113380000001, 8.3997308], [49.00998529999999, 8.3986751], [49.010356599999994, 8.4015973], [49.00962830000001, 8.4005009], [49.00940589999998, 8.4050439], [49.0070285, 8.4059082], [49.0072742, 8.4034823], [49.004140799999995, 8.3999236], [49.0075392, 8.4019991], [49.0072327, 8.392877], [49.007231100000006, 8.3925611], [49.0074559, 8.391608], [49.006927399999995, 8.3919797], [49.004952, 8.3943905], [49.002660500000005, 8.3947147], [49.0007347, 8.3925614], [49.0004234, 8.3954849], [49.00171949999999, 8.3947107], [49.001861299999995, 8.3945077], [49.0008274, 8.4007317], [49.00213850000001, 8.4034091], [49.0017606, 8.4033904], [49.0018749, 8.4034069], [49.0008535, 8.4058375], [49.0016385, 8.406866], [49.0016342, 8.4067267], [49.00388569999999, 8.4065643], [49.00401449999999, 8.4076558], [49.00559069999999, 8.4091522], [49.00753879999999, 8.4072216], [49.007760299999994, 8.4074354], [49.004679900000006, 8.4164941], [49.00256600000001, 8.3704217]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            );
+        
+    
+            heat_map_9a8ec3210892263fab94071f0353eb8e.addTo(feature_group_475d492b27c4dea91235603e30309d27);
+        
+    
+            feature_group_475d492b27c4dea91235603e30309d27.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            var layer_control_d76184b7bf9de7b4141cbdf8f4521b32_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "Geometries" : feature_group_c99e94038f09fb64e11eaeea0c7b0a1e,
+                    "Caf\u00e9s Locations" : geo_json_7a4d6aa886ce5421d30ae131819f32a7,
+                    "Caf\u00e9s Heatmap" : feature_group_475d492b27c4dea91235603e30309d27,
+                },
+            };
+            let layer_control_d76184b7bf9de7b4141cbdf8f4521b32 = L.control.layers(
+                layer_control_d76184b7bf9de7b4141cbdf8f4521b32_layers.base_layers,
+                layer_control_d76184b7bf9de7b4141cbdf8f4521b32_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_534da0228a9f4c565c6e780adda55482);
+
+        
+    
+            map_534da0228a9f4c565c6e780adda55482.fitBounds(
+                [[48.99150531789718, 8.358069518232984], [49.02909200599551, 8.41620867796248]],
+                {}
+            );
+        
+    
+            feature_group_c99e94038f09fb64e11eaeea0c7b0a1e.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_231f8557dfdc0c800f247e2b39450056.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            geo_json_7a4d6aa886ce5421d30ae131819f32a7.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            heat_map_9a8ec3210892263fab94071f0353eb8e.addTo(feature_group_475d492b27c4dea91235603e30309d27);
+        
+    
+            feature_group_475d492b27c4dea91235603e30309d27.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            feature_group_c99e94038f09fb64e11eaeea0c7b0a1e.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_bd1bf82bc604276ee9e3a4c10f052e6b.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            tile_layer_231f8557dfdc0c800f247e2b39450056.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            geo_json_7a4d6aa886ce5421d30ae131819f32a7.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+    
+            heat_map_9a8ec3210892263fab94071f0353eb8e.addTo(feature_group_475d492b27c4dea91235603e30309d27);
+        
+    
+            feature_group_475d492b27c4dea91235603e30309d27.addTo(map_534da0228a9f4c565c6e780adda55482);
+        
+</script>
+</html>
