@@ -251,9 +251,9 @@ with col1:
                 </div>
                 """
                 components.html(dynamic_html, height=515)  
-            with st.expander("GeoDataFrames"):
+            with st.expander("(Geo-)DataFrames"):
                 with st.container(height=522, border=False):
-                    gdf = st.selectbox("GeoDataFrame", tuple([name for name, obj in st.session_state["geoagent"].tools[0].python_repl.locals.items() if isinstance(obj, gpd.GeoDataFrame)]))
+                    gdf = st.selectbox("(Geo-)DataFrame", tuple([name for name, obj in st.session_state["geoagent"].tools[0].python_repl.locals.items() if isinstance(obj, gpd.GeoDataFrame)]))
                     if gdf:
                         st.dataframe(st.session_state["geoagent"].tools[0].python_repl.locals[gdf],use_container_width=True)
         else:
