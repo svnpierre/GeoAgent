@@ -1,14 +1,13 @@
-## **Requirements**  
-- Creation of venv via the requirements.txt
-- Adjustmenets of some libaries (see under adjustments)
-- An OpenAI API key  
-- A PostGIS database with the following tables:
-  - `data.osm_points`  
-  - `data.osm_lines`  
-  - `data.osm_polygons`  
-  - `data.dfs`  
-- OSM data can be imported into the public schema using a PBF file and the `pg_osm_import.lua` script.  
-- Credentials (database and OpenAI API key) must be stored in the .env file.
+## **Requirements**   
+- Creation of a venv via the requirements.txt
+- Adjustment of some libraries (see readme)
+- An OpenAI API key
+- A PostGIS database with the following criteria:
+1. Tables: data.osm_points, data.osm_lines, data.osm_polygons, data.dfs
+2. EDB Language Pack 3, plpython3u extension and language
+3. OSM data can be imported into the public schema using a PBF file and the pg_osm_import.lua script (see Database-PostgreSQL) with osm2pgsql
+4. Creation of the geocode_function (see Database-PostgreSQL)
+- Credentials (database and OpenAI API key) stored in the .env file. 
 
 ## **How to Use**  
 To start the agent, run the following command:  
