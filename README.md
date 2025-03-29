@@ -12,7 +12,6 @@ GeoAgent is an LLM-powered agent that analyzes and visualizes user-provided WGS8
 🐍 Python_REPL
 - A simple Python shell to execute basic Python commands for quick queries and operations.
 
-
 📊 AnalystTool
 - Plans, writes, executes, and debugs Python scripts for analyzing (Geo-)DataFrames.
 
@@ -52,6 +51,10 @@ GeoAgent is an LLM-powered agent that analyzes and visualizes user-provided WGS8
 ```
 streamlit run geoagent_app.py
 ```
+
+# LangSmith traces
+- See *Tests*
+
 # Architecture 
 ![alt text](https://github.com/svnpierre/GeoAgent/blob/main/Architektur.png) 
 ![alt text](https://github.com/svnpierre/GeoAgent/blob/main/Agent_Executor.png) 
