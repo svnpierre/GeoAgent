@@ -1,6 +1,6 @@
 # GeoAgent
 
-GeoAgent is an LLM-powered (GPT-4o 2024-08-06) agent that analyzes and visualizes user-provided WGS84 (EPSG:4326) GeoJSON files as well as OpenStreetMap data for Germany retrieved from a database.
+GeoAgent is an LLM-powered (GPT-4o 2024-08-06) agent that analyzes and visualizes user-provided WGS84 (EPSG:4326) GeoJSON files as well as OpenStreetMap data for Germany retrieved from a database. The agent combines advanced React-Prompting with direct Function Calling. 
 
 # Features
 - Automates and solves spatial tasks using GeoPandas and PostGIS.
@@ -61,6 +61,7 @@ streamlit run geoagent_app.py
 - Streamlit
 - PostGIS
 - OSMNX
+- Osm2pgsql Flex output
   
 # Architecture 
 ![alt text](https://github.com/svnpierre/GeoAgent/blob/main/Architektur.png) 
