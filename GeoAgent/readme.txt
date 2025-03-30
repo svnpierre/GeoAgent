@@ -16,8 +16,8 @@ To start the agent, run the following command:
 ## **Adjustments**  
 - Recommended code changes:
 
-1. geopandas.explore.py:
---> Adaptation of the def _categorical_legend() to support scrollbars, custom sizes and folding function for legends
+1. geopandas.explore:
+--> Adaptation of the def _categorical_legend() to support scrollbars, custom sizes and folding function for legends:
 
 def _categorical_legend(m, title, categories, colors):
     """
@@ -151,8 +151,45 @@ def _categorical_legend(m, title, categories, colors):
 
 
 
+2. langchain_core.utils.function_calling
+--> Adaptation of the def _recursive_set_additional_properties_false to support function calling prompting:
 
+def _recursive_set_additional_properties_false(
+    schema: Dict[str, Any],
+) -> Dict[str, Any]:
+    if isinstance(schema, dict):
+        # Check if 'required' is a key at the current level or if the schema is empty,
+        # in which case additionalProperties still needs to be specified.
+        if "required" in schema or (
+            "properties" in schema and not schema["properties"]
+        ):
+            schema["additionalProperties"] = False
 
+        # Recursively check 'properties' and 'items' if they exist
+        if "properties" in schema:
+            for value in schema["properties"].values():
+                _recursive_set_additional_properties_false(value)
+        if "items" in schema:
+            _recursive_set_additional_properties_false(schema["items"])
+        if "$defs" in schema:
+            for value in schema["$defs"].values():
+                _recursive_set_additional_properties_false(value)
+        if "anyOf" in schema:
+            for value in schema["anyOf"]:
+                _recursive_set_additional_properties_false(value)
 
+    return schema
+
+3. langchain_core.tools.base
+--> Adapation of def _to_args_and_kwargs:
+
+def _to_args_and_kwargs(self, tool_input: Union[str, Dict]) -> Tuple[Tuple, Dict]:
+    tool_input = self._parse_input(tool_input)
+    # For backwards compatibility, if run_input is a string,
+    # pass as a positional argument.
+    if isinstance(tool_input, str):
+        return (tool_input,), {}
+    else:
+        return (), dict(tool_input)
 
 
